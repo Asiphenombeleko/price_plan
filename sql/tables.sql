@@ -1,0 +1,11 @@
+CREATE TABLE Users (
+    UserID INT PRIMARY KEY,
+    Username VARCHAR(50) NOT NULL
+)
+CREATE TABLE PricePlans (
+    PlanID INT PRIMARY KEY,
+    PlanName VARCHAR(50),
+    Price DECIMAL(10, 2) NOT NULL,
+    UserID INT,
+    FOREIGN KEY (UserID) REFERENCES Users(UserID)
+);
